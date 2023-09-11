@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,12 +14,10 @@ public class ChatOpener : InteractionController
 
     private void MovePanelsOnClick()
     {
-        if (_mainPanel.anchoredPosition == Vector2.zero || _mainPanel.anchoredPosition == new Vector2(-1000, 0))
+        if (_mainPanel.anchoredPosition == Vector2.zero || _mainPanel.anchoredPosition == new Vector2(-1300, 0))
         {
-            StartCoroutine(MoveObjectInUI(_chatsPanel, 3000, new Vector3(_chatsPanel.anchoredPosition.x == 0 ? 1000 : 0, 0)));
-            StartCoroutine(MoveObjectInUI(_mainPanel, 3000, new Vector3(_mainPanel.anchoredPosition.x == 0 ? -1000 : 0, 0)));
+            StartCoroutine(MoveObjectInUI(_chatsPanel, 4000, new Vector3(_chatsPanel.anchoredPosition.x == 1300 ? 0: 1300, 0)));
+            StartCoroutine(MoveObjectInUI(_mainPanel, 4000, new Vector3(_mainPanel.anchoredPosition.x == 0 ? -1300 : 0, 0)));
         }
-
-        
     }
 }
