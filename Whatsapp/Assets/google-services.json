@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "275418880954",
+    "project_id": "messaging-6c942",
+    "storage_bucket": "messaging-6c942.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275418880954:android:1a374ecbb96350b5ac1b83",
+        "android_client_info": {
+          "package_name": "com.Techventions.Whatsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBswJprAu0KNB1IuNAYMfVzTdNyK5dVI0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

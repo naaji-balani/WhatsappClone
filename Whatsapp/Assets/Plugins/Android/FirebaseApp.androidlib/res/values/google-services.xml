@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="gcm_defaultSenderId" translatable="false">275418880954</string>
+  <string name="google_storage_bucket" translatable="false">messaging-6c942.appspot.com</string>
+  <string name="project_id" translatable="false">messaging-6c942</string>
+  <string name="google_api_key" translatable="false">AIzaSyBswJprAu0KNB1IuNAYMfVzTdNyK5dVI0I</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBswJprAu0KNB1IuNAYMfVzTdNyK5dVI0I</string>
+  <string name="google_app_id" translatable="false">1:275418880954:android:1a374ecbb96350b5ac1b83</string>
+</resources>
