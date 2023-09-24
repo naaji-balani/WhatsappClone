@@ -10,7 +10,6 @@ public class Database : MonoBehaviour
     FirebaseFirestore db;
     Message message = new Message();
 
-
     private void Awake()
     {
         if (database == null) database = this;
@@ -18,13 +17,28 @@ public class Database : MonoBehaviour
 
     void Start()
     {
-        db = FirebaseFirestore.DefaultInstance;
-        
+        db = FirebaseFirestore.DefaultInstance;       
     }
+
+    public void PostMessage(Message message, Action callback, Action<AggregateException> fallback)
+    {
+        db.Collection("Messages").Document().SetAsync(message).ContinueWith(task =>
+        {
+            if (task.IsFaulted || task.IsCanceled)
+            {
+                fallback(task.Exception);
+            }
+            else
+            {
+                callback();
+            }
+        });
+    }
+
 
     public void Listen(Action<Message> callback,Action<AggregateException> fallback)
     {
-        Query query = db.Collection("Messages").OrderBy("Time");
+        Query query = db.Collection("Messages").OrderBy("time");
 
         ListenerRegistration listener = query.Listen(snapshot =>
         {
@@ -32,8 +46,8 @@ public class Database : MonoBehaviour
             {
                 if (change.ChangeType == DocumentChange.Type.Added)
                 {
-                    Debug.Log(string.Format("New Message : {0}", change.Document.Id));
                     message = change.Document.ConvertTo<Message>();
+                    callback(message);
                 }
                 else if (change.ChangeType == DocumentChange.Type.Modified)
                 {

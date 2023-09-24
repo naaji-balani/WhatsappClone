@@ -18,9 +18,13 @@ public class MessageBubble : MonoBehaviour
         UpdateTextTransform();
     }
 
+    private void Update()
+    {
+        UpdateTextTransform();
+    }
+
     void UpdateTextTransform()
     {
-
         // Get the preferred width and height of the text based on its content and settings.
         float textWidth = messageText.preferredWidth;
         float textHeight = messageText.preferredHeight;

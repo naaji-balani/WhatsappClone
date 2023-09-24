@@ -9,7 +9,7 @@ public class Message
     public Timestamp time { get; set; }
 
     [FirestoreProperty]
-    public string user { get; set; }
+    public string sender { get; set; }
 
     [FirestoreProperty]
     public string message { get; set; }
