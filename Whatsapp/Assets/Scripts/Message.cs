@@ -14,4 +14,5 @@ public class Message
     [FirestoreProperty]
     public string message { get; set; }
 
+
 }

@@ -47,6 +47,9 @@ public class Database : MonoBehaviour
                 if (change.ChangeType == DocumentChange.Type.Added)
                 {
                     message = change.Document.ConvertTo<Message>();
+                    string messageSender = change.Document.GetValue<string>("sender");
+
+                    message.sender = messageSender;
                     callback(message);
                 }
                 else if (change.ChangeType == DocumentChange.Type.Modified)

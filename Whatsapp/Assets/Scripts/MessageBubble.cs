@@ -20,7 +20,7 @@ public class MessageBubble : MonoBehaviour
 
     private void Update()
     {
-        UpdateTextTransform();
+            UpdateTextTransform();
     }
 
     void UpdateTextTransform()

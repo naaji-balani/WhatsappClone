@@ -39,6 +39,7 @@ public class ChatHandler : MonoBehaviour
 
     void InstantiateMessage(Message message)
     {
+        Debug.Log(message.sender);
         var newMessage = Instantiate(message.sender != PlayerPrefs.GetString("Number") ? _senderMessagePrefab : _recieverMessagePrefab, _chatMessageContent);
         newMessage.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = message.message;
     }
